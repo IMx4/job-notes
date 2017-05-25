@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Bootstrap -->
+    <link th:href="@{webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{webjars/bootstrap/3.3.6/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+    <link th:href="@{vendor/my-custom-css.css}" rel="stylesheet"/>
+
+
+
+    <title>Job | Notes</title>
+</head>
+
+<body>
+
+<div th:replace="navbar-template :: navbar"></div>
+
+<div class="row" id="stickies-row">
+    <div th:each="note : ${notes}" class="col-sm-4" style="height: 200px;" id="stickies-container" >
+        <div class="panel panel-primary" id="stickies" >
+            <div class="panel-heading">
+                <div class="col-sm-4" id="pencil">
+                    <a th:href="@{'/edit/' + ${note.id}}"><span class="glyphicon glyphicon-pencil" id="pen-edit"></span></a>
+                    <a th:href="@{'/delete/' + ${note.id}}"><span class="glyphicon glyphicon-trash" aria-hidden="true" id="trash"></span></a>
+                </div>
+                <h3 class="panel-title" th:text="${note.jobName}"></h3>
+            </div>
+            <div class="panel-body" th:text="${note.note}" id="note-panel">
+
+            </div>
+            <div class="col-sm-4" th:class="date">
+                <p th:text="${note.dateAdded}" style="color:#337ab7"></p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="webjars/bootstrap/3.3.6/js/docs.min.js"></script>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+
+</html>

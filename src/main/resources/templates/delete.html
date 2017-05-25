@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Bootstrap -->
+    <link th:href="@{../webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{../webjars/bootstrap/3.3.6/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+    <link th:href="@{vendor/my-custom-css.css}" rel="stylesheet"/>
+
+
+    <title>Job | Notes</title>
+</head>
+<body>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Job Notes</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="${/}">Home</a></li>
+                <li><a href="#about">View All</a></li>
+                <li><a href="#contact">New Job</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View by Job <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Job 1</a></li>
+                        <li><a href="#">Job 2</a></li>
+                        <li><a href="#">Job 3</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container theme-showcase" role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1>Benzenberg Cabinets Corporation</h1>
+        <p>Collection of job notes, add, remove of modify.</p>
+    </div>
+</div>
+
+
+<div class="panel panel-primary" id="edit-note">
+    <div class="panel-heading">
+        <h3 class="panel-title" th:text="${note1.jobName}"></h3>
+    </div>
+    <div class="panel-body" th:text="${note1.note}">
+        Panel content
+    </div>
+    <a class="btn btn-lg btn-danger" id="delete-button" href="#" role="button">Delete</a>
+</div>
+
+<div>
+</div>
+
+
+<!--<h2 th:text="${note1.note}"> note </h2>-->
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="webjars/bootstrap/3.3.6/js/docs.min.js"></script>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+

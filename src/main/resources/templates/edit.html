@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Bootstrap -->
+    <link th:href="@{../webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{../webjars/bootstrap/3.3.6/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+    <link th:href="@{../vendor/my-custom-css.css}" rel="stylesheet"/>
+
+
+    <title>Job | Notes</title>
+</head>
+<body>
+
+<div th:replace="navbar-template :: navbar"></div>
+
+<div class="panel panel-primary" id="edit-note">
+    <div class="panel-heading">
+        <h3 class="panel-title" th:text="${note1.jobName}"></h3>
+    </div>
+    <div class="panel-body">
+        <form id="edit-form" th:object="${e}" th:action="@{/saveEdit}" method="post">
+            <input type="hidden" th:field="*{id}"/>
+            <textarea class="edit-text-area" form="edit-form" th:text="${note1.note}" th:field="*{note}"></textarea>
+            <button class="btn btn-lg btn-success" id="delete-button" type="submit" value="Submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/docs.min.js"></script>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+
