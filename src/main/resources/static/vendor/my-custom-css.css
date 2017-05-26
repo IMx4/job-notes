@@ -114,24 +114,37 @@
 #new-note {
     position: absolute;
 
-    transform: translate(-96%);
+    transform: translate(-100%);
     transition: .7s;
     top: 250px;
-    padding-right: 45px;
-    background: #337ab7;
+    /*padding-right: 45px;*/
     height: 110px;
-    width: 89%;
+    width: 100%;
     z-index: 1000;
 }
 
-#new-note:hover {
+#new-note.clicked {
 
     transform: translate(0%);
     transition: .7s;
-    margin-left: 10%;
+    /*margin-left: 10%;*/
     height: 600px;
     background: none;
 }
+
+#new-note.closed {
+    position: absolute;
+
+    transform: translate(-100%);
+    transition: .7s;
+    top: 250px;
+    /*padding-right: 45px;*/
+    height: 110px;
+    width: 100%;
+    z-index: 1000;
+}
+
+
 
 
 
