@@ -18,6 +18,9 @@
 
 <div th:replace="navbar-template :: navbar"></div>
 
+
+
+
 <div class="row" id="stickies-row">
     <div th:each="note : ${notesByName}"  class="col-sm-4" style="height: 200px;" >
         <div class="panel panel-primary" id="stickies">
@@ -31,8 +34,8 @@
             <div class="panel-body" th:text="${note.note}" id="note-panel">
 
             </div>
-            <div class="col-sm-4">
-                <p th:text="${note.dateAdded}" style="color: "></p>
+            <div class="col-sm-4" th:class="date">
+                <p th:text="${note.dateAdded}" style="color:#337ab7 "></p>
             </div>
 
         </div>
@@ -51,6 +54,7 @@
 <script src="webjars/bootstrap/3.3.6/js/docs.min.js"></script>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="vendor/custom-js.js"></script>
 </body>
 
 </html>

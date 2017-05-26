@@ -1,4 +1,7 @@
 
+body{
+    background-image: url("images/Metal-Background.png") ;
+}
 
 .badge{
     color:#42f4e5;

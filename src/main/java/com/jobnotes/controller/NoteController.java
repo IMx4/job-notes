@@ -81,7 +81,6 @@ public class NoteController {
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public void newNote(Notes newNote, BindingResult bindingResult, ModelMap modelMap, Model model) {
 
-
     }
 
 
