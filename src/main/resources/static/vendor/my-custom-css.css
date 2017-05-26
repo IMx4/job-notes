@@ -1,7 +1,4 @@
 
-.glyphicon:hover{
-    color:#42f4e5;
-}
 
 .badge{
     color:#42f4e5;
@@ -23,6 +20,8 @@
     padding-right:20px;
 }
 
+/* edit note form */
+
 #edit-note{
     margin-left:100px;
     margin-right:100px;
@@ -38,6 +37,8 @@
     width:100%;
     height:170px;
 }
+
+/* Sticky notes */
 
 .panel-body{
     height:200px;
@@ -56,22 +57,20 @@
     height:200px;
     position: relative;
 }
-#stickies-container:hover{
-    
-}
 
+#stickies-container {
+    margin-bottom: 30px;
+
+}
 #stickies:hover {
 
     transform: translateX(-10%);
     transform: scale(1.4, 1.4);
     z-index: 999;
-    -webkit-transition: all .7s ease-in-out;
-    transition: all .7s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
     height: 200px;
     width: 100%;
-
-
-
 }
 
 #note-panel{
@@ -80,7 +79,6 @@
     font-size: 14px;
     height:75%;
     text-overflow: ellipsis;
-
 }
 
 #pencil{
@@ -92,6 +90,10 @@
 #pen-edit,#trash{
     color:white;
     padding: 5px;
+}
+
+.glyphicon:hover {
+    color: #42f4e5;
 }
 
 #pen-edit:hover,#trash:hover{
@@ -106,3 +108,50 @@
     left: 3px;
 
 }
+
+/* New note form */
+
+#new-note {
+    position: absolute;
+
+    transform: translate(-96%);
+    transition: .7s;
+    top: 250px;
+    padding-right: 45px;
+    background: #337ab7;
+    height: 110px;
+    width: 89%;
+    z-index: 1000;
+}
+
+#new-note:hover {
+
+    transform: translate(0%);
+    transition: .7s;
+    margin-left: 10%;
+    height: 600px;
+    background: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

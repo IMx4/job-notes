@@ -33,6 +33,10 @@ public class NoteController {
     public String listCategories(ModelMap modelMap){
         List<Notes> notes = notesRepository.getNotes();
         modelMap.put("notes", notes);
+
+        Notes newNoteTemp = new Notes();
+        modelMap.put("newNoteTemp", newNoteTemp);
+
         return "allNotes2";
     }
 
@@ -72,6 +76,12 @@ public class NoteController {
     public String saveEdit(Notes e, BindingResult bindingResult){
         notesRepository.editNote(e.getId(),e.getNote());
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/new", method = RequestMethod.POST)
+    public void newNote(Notes newNote, BindingResult bindingResult, ModelMap modelMap, Model model) {
+
+
     }
 
 

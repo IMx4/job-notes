@@ -11,7 +11,6 @@
     <link th:href="@{vendor/my-custom-css.css}" rel="stylesheet"/>
 
 
-
     <title>Job | Notes</title>
 </head>
 
@@ -19,13 +18,37 @@
 
 <div th:replace="navbar-template :: navbar"></div>
 
+<!-- Slid in form to add new note -->
+
+<div class="new-note-form">
+    <div class="container" id="new-note">
+        <div class="panel panel-primary" style="height: inherit">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Create new note...</h3>
+            </div>
+            <div class="panel-body" id="panel-body" style="height:93.5%">
+                <form id="new-note-form" th:object="${newNoteTemp}" th:action="@{/new}" method="post">
+                    <input type="text" th:field="*{id}"/>
+                    <textarea class="new-note-form-textarea" form="new-note-form" th:field="*{note}"></textarea>
+                    <button class="btn btn-lg btn-success" id="delete-button" type="submit" value="Submit">Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Container for note display -->
+
 <div class="row" id="stickies-row">
-    <div th:each="note : ${notes}" class="col-sm-4" style="height: 200px;" id="stickies-container" >
-        <div class="panel panel-primary" id="stickies" >
+    <div th:each="note : ${notes}" class="col-sm-4" style="height: 200px;" id="stickies-container">
+        <div class="panel panel-primary" id="stickies">
             <div class="panel-heading">
                 <div class="col-sm-4" id="pencil">
                     <a th:href="@{'/edit/' + ${note.id}}"><span class="glyphicon glyphicon-pencil" id="pen-edit"></span></a>
-                    <a th:href="@{'/delete/' + ${note.id}}"><span class="glyphicon glyphicon-trash" aria-hidden="true" id="trash"></span></a>
+                    <a th:href="@{'/delete/' + ${note.id}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"
+                                                                  id="trash"></span></a>
                 </div>
                 <h3 class="panel-title" th:text="${note.jobName}"></h3>
             </div>

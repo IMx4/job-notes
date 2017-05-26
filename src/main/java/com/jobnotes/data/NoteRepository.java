@@ -24,8 +24,8 @@ public class NoteRepository {
     List<Notes> notesList =  Arrays.asList(
             new Notes(1,"Horan","This is the first note. Need 6 pcs of wood - 7 1/2 x 12. Also need another pc of trim. Added more to the note to make it long. have to make it even longer to reach the end of the page", "5/17/17","in progress"),
             new Notes(2,"Baby Store", "Baby Store note","5/17/17","not started" ),
-            new Notes(3,"Montemenro", "Another Note","5/24/17","not started" ));
-
+            new Notes(3, "Montemenro", "Another Note", "5/24/17", "not started"),
+            new Notes(3, "Shop", "And another note", "5/30/17", "not started"));
 
 
     public List<Notes> getNotes(){
