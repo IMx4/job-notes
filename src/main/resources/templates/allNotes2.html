@@ -18,7 +18,7 @@
 
 <div th:replace="navbar-template :: navbar"></div>
 
-<!-- Slid in form to add new note -->
+<!-- Slider in form to add new note -->
 
 <div class="new-note-form">
     <div class="container" id="new-note">
@@ -30,11 +30,19 @@
                 <form id="new-note-form" th:object="${newNoteTemp}" th:action="@{/new}" method="post">
                     <input type="text" th:field="*{id}"/>
                     <textarea class="new-note-form-textarea" form="new-note-form" th:field="*{note}"></textarea>
-                    <button class="btn btn-lg btn-success" id="delete-button" type="submit" value="Submit">Submit
-                    </button>
+                    <button class="btn btn-primary" id="create-new" type="submit" value="Submit">Submit</button>
+                    <button class="btn btn-primary" id="close" type="button">Close</button>
                 </form>
+
+
             </div>
+
         </div>
+
+
+
+
+
 
     </div>
 </div>
@@ -75,6 +83,7 @@
 <script src="webjars/bootstrap/3.3.6/js/docs.min.js"></script>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="vendor/custom-js.js"></script>
 </body>
 
 </html>
