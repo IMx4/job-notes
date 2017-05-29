@@ -21,11 +21,22 @@
     <div class="panel-heading">
         <h3 class="panel-title" th:text="${note1.jobName}"></h3>
     </div>
+
     <div class="panel-body">
         <form id="edit-form" th:object="${e}" th:action="@{/saveEdit}" method="post">
+            <div class="col-sm-3">
+                <label for="status" style="margin: 0px;">Status</label>
+                <select class="form-control" id="status" form="edit-form" th:field="*{status}">
+                    <option value="Not Started" >Not Started</option>
+                    <option value="In Progress" >In Progress</option>
+                    <option value="Finished" >Finished</option>
+                </select>
+            </div>
+            <div class="col-sm-9">
             <input type="hidden" th:field="*{id}"/>
             <textarea class="edit-text-area" form="edit-form" th:text="${note1.note}" th:field="*{note}"></textarea>
             <button class="btn btn-lg btn-success" id="delete-button" type="submit" value="Submit">Submit</button>
+            </div>
         </form>
     </div>
 </div>

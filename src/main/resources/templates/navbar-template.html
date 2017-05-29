@@ -40,7 +40,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View by Job <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li th:each="note : ${notes}"><a th:href="@{'/' + ${note.jobName}}" th:text="${note.jobName}">Job 1</a></li>
+                            <li th:each="note : ${notesFiltered}"><a th:href="@{'/' + ${note}}" th:text="${note}">Job 1</a></li>
                         </ul>
                     </li>
                 </ul>

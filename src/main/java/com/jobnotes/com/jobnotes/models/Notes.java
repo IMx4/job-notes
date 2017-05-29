@@ -24,9 +24,17 @@ public class Notes {
 
     }
 
-    public Notes(String note, int id){
+    public Notes(String note, int id, String status){
         this.note = note;
         this.id = id;
+        this.status = status;
+    }
+
+    public Notes(String note, int id,String jobName, String status){
+        this.note = note;
+        this.id = id;
+        this.jobName = jobName;
+        this.status = status;
 
     }
 

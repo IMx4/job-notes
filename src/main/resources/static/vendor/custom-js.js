@@ -17,4 +17,22 @@ $("#new-job-button").add(function () {
     }
 } );
 
+$( document ).ready(function() {
+    $('#radio-new-job').hide()
+});
+
+
+// new note option to select job or add new job
+$("#inlineRadio1").on('click', function() {
+
+        $('#radio-new-job').show()
+        $('#radio-add-to-job').hide()
+});
+
+$("#inlineRadio2").on('click', function() {
+
+    $('#radio-new-job').hide()
+    $('#radio-add-to-job').show()
+
+});
 

@@ -122,16 +122,16 @@ body{
     top: 250px;
     /*padding-right: 45px;*/
     height: 110px;
-    width: 100%;
+    /*width: 100%;*/
     z-index: 1000;
 }
 
 #new-note.clicked {
 
-    transform: translate(0%);
+    transform: translate(15%);
     transition: .7s;
     /*margin-left: 10%;*/
-    height: 600px;
+    height: 450px;
     background: none;
 }
 
@@ -143,10 +143,17 @@ body{
     top: 250px;
     /*padding-right: 45px;*/
     height: 110px;
-    width: 100%;
+    /*width: 100%;*/
     z-index: 1000;
 }
 
+.new-note-form-textarea{
+
+    margin-top: 50px;
+    width: inherit;
+    height: 250px;
+
+}
 
 
 

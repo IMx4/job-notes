@@ -22,16 +22,55 @@
 
 <div class="new-note-form">
     <div class="container" id="new-note">
-        <div class="panel panel-primary" style="height: inherit">
+        <div class="panel panel-primary" style="width: 80%;height: inherit">
             <div class="panel-heading">
                 <h3 class="panel-title"> Create new note...</h3>
             </div>
-            <div class="panel-body" id="panel-body" style="height:93.5%">
-                <form id="new-note-form" th:object="${newNoteTemp}" th:action="@{/new}" method="post">
-                    <input type="text" th:field="*{id}"/>
-                    <textarea class="new-note-form-textarea" form="new-note-form" th:field="*{note}"></textarea>
-                    <button class="btn btn-primary" id="create-new" type="submit" value="Submit">Submit</button>
-                    <button class="btn btn-primary" id="close" type="button">Close</button>
+            <div class="panel-body" id="panel-body" style="height: 409px">
+
+
+                <form id="new-note-form" th:object="${newNoteTemp}" th:action="@{/newNote}" method="post">
+                    <div class="container" id="new-note-head" style="width: inherit">
+                        <div class="col-sm-3">
+                            <label for="status" style="margin: 0px;">Status</label>
+                            <select class="form-control" id="status" form="new-note-form" th:field="*{status}">
+                                <option value="Not Started" >Not Started</option>
+                                <option value="In Progress" >In Progress</option>
+                                <option value="Finished" >Finished</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"/> Create new job
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"
+                                       checked="checked"/> Add to
+                                existing <job></job>
+                            </label>
+
+                            <div class="ddd" id="radio-add-to-job">
+                                <select class="form-control" id="add-to-job" style="width: 100%" th:field="*{jobName}"><!-- form="new-note-form"-->
+                                    <div th:each="note1 : ${notesFiltered}">
+                                        <option th:text="${note1}" th:value="${note1}">Option</option>
+                                    </div>
+                                </select>
+                            </div>
+                            <div id="radio-new-job" >
+                                <input class="form-control" type="text" id="new-job" placeholder="New Job Name" th:field="*{jobName}"/><!-- form="new-note-form"-->
+                            </div>
+
+                        </div>
+                        <div class="col-sm-3" style="padding-top: 20px;padding-left: 50px">
+                            <button class="btn btn-primary" id="create-new" type="submit" value="Submit">Submit</button>
+                            <button class="btn btn-primary" id="close" type="button">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                    <textarea class="new-note-form-textarea" form="new-note-form" th:field="*{note}"> </textarea>
+                    </div>
+
                 </form>
 
 
@@ -49,7 +88,7 @@
             <div class="panel-heading">
                 <div class="col-sm-4" id="pencil">
                     <a th:href="@{'/edit/' + ${note.id}}"><span class="glyphicon glyphicon-pencil" id="pen-edit"></span></a>
-                    <a th:href="@{'/delete/' + ${note.id}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"
+                    <a th:href="@{'/delete/' + ${note.id}}" data-toggle="modal" data-target="#basicModal"><span class="glyphicon glyphicon-trash" aria-hidden="true"
                                                                   id="trash"></span></a>
                 </div>
                 <h3 class="panel-title" th:text="${note.jobName}"></h3>
@@ -58,12 +97,15 @@
 
             </div>
             <div class="col-sm-4" th:class="date">
-                <p th:text="${note.dateAdded}" style="color:#337ab7"></p>
+                <span th:text="${note.dateAdded}" style="color:#337ab7"></span>
+                <span th:text="${note.status}" style="color:#337ab7; padding-left: 60%" ></span>
             </div>
-
         </div>
     </div>
 </div>
+
+
+
 
 
 <!-- /container -->
