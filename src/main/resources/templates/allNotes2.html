@@ -88,7 +88,7 @@
             <div class="panel-heading">
                 <div class="col-sm-4" id="pencil">
                     <a th:href="@{'/edit/' + ${note.id}}"><span class="glyphicon glyphicon-pencil" id="pen-edit"></span></a>
-                    <a th:href="@{'/delete/' + ${note.id}}" data-toggle="modal" data-target="#basicModal"><span class="glyphicon glyphicon-trash" aria-hidden="true"
+                    <a th:href="@{'/delete/' + ${note.id}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"
                                                                   id="trash"></span></a>
                 </div>
                 <h3 class="panel-title" th:text="${note.jobName}"></h3>
